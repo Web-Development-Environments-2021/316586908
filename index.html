@@ -200,7 +200,11 @@
         <input id="like" type="checkbox" name="like"/>
         <span class="btn btn-counter">&#x2764; Like<span id="count"></span></span>
       </div>
+      <div><br><iframe class="l" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fahovacoh&width=0&layout=standard&action=like&size=large&share=true&height=35&appId"></iframe><br>
+      </div>
+      <div></div>
   </div>
+
     </section>
 
     <div id="qrcoder">
@@ -341,7 +345,7 @@
     </div>
     <div class="separator"><p style="font-size: 30px">Contact Me</p></div>
     <section class="section">
-      <div class="container">
+      <!-- <div class="container">
         <form method="post" action="mailto:ido3@post.bgu.ac.il" enctype="text/plain">
           <label >שם פרטי</label>
           <input type="text" id="fname" name="first name" placeholder="השם שלך.." style="font-size: 18px;">
@@ -372,8 +376,51 @@
           </div>
           <center><input type="submit" value="Submit"></center>
         </form>
-      </div>
+      </div> -->
+      <form id="form">
+        <div class="container">
+          <label for="to_name">שם פרטי</label>
+          <input type="text" id="lname" name="last name" placeholder="שם פרטי.." style="font-size: 18px;">
+        </div>
+        <div class="container">
+          <label for="from_name">שם משפחה</label>
+          <input type="text" id="lname" name="last name" placeholder="שם המשפחה שלך.." style="font-size: 18px;">
+        </div>
+        <div class="container">
+          <label for="message">תוכן ההודעה</label>
+          <textarea name="subject" placeholder="כתוב הודעה.." style="width: 100%; height: 300px; font-size: 18px;"></textarea>
+        </div>
+        <div class="container">
+          <label for="reply_to">אימייל שלך</label>
+          <input type="text" name="email" placeholder="האימייל שלך.." style="font-size: 18px;">
+        </div>
+    
+        <div class="select">
+          <select id="standard-select" name="emoji" aria-placeholder="בחר..">
+            <option >&#128512;</option>
+            <option >&#128513;</option>
+            <option >&#128514;</option>
+            <option >&#128546;</option>
+            <option >&#128526;</option>
+            <option >&#128525;</option>
+            <option >&#128527;</option>
+            <option >&#128540;</option>
+            <option >&#129314;</option>
+            <option >&#129322;</option>
+          </select>
+        </div>
+        <br>
+        <input type="submit" id="button" value="Send Email">
+      </form>
+      
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+      
+      <script type="text/javascript">
+        emailjs.init('user_XtZoX8fE5vOgLdq51QgX8')
+      </script>
+  
     </section>
+ 
 
     <script type="text/javascript">
       $(function () {
@@ -388,5 +435,6 @@
          $('#menu').toggle($(this).scrollTop()>1000)
       });​
     </script>
+
   </body>
 </html>
