@@ -128,6 +128,7 @@ section{
 
 .l{
 	margin-left: 30px;
+
 }
 .tit {
 	border-top: 3px dashed rgb(0, 0, 0);
@@ -309,3 +310,27 @@ button:hover {
 	background-color: #9ee7a2;
 	}
 
+.socialMedia{
+	width: 90px;
+	height: 90px;
+	margin-left: 60px;
+
+	opacity: 0.6;
+}
+.socialMedia:hover{
+	background-color: #efe2e2;
+	border-radius: 180px;
+	width: 120px;
+	height: 120px;
+	opacity: 1;
+}
+
+
+.socialLogo {
+	padding: 70px 0 50px;
+	display: flex;
+	justify-content: center;
+  }
+.where{
+	background-color: red;
+}
