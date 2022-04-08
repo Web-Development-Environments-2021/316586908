@@ -281,3 +281,31 @@ select {
 }
 
 
+#contact input{
+	width: 100%; 
+	padding: 13px; 
+	border: 2px rgb(231, 227, 231);
+	box-sizing:border-box;
+	margin-bottom: 26px; 
+}
+#contact textarea{
+	width: 100%; 
+	padding: 13px; 
+	border: 2px rgb(231, 227, 231);
+	box-sizing:border-box;
+	margin-bottom: 26px; 
+}
+button{
+	background-color: #1f8f66;
+	color: white;
+	padding: 12px 40px;
+	border: none;
+	cursor: pointer;
+	display:inherit;
+	font-size: 18px;
+	font-style: italic;
+}
+button:hover {
+	background-color: #9ee7a2;
+	}
+

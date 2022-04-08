@@ -3,6 +3,9 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.tiny.cloud/1/uervm4s58b4wijcbl81e2v3hf3tthctvod1hb5z31gp0pzpf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   </head>
   <body>
     <div id="menu">
@@ -344,81 +347,31 @@
     </br> 
     </div>
     <div class="separator"><p style="font-size: 30px">Contact Me</p></div>
-    <section class="section">
-      <!-- <div class="container">
-        <form method="post" action="mailto:ido3@post.bgu.ac.il" enctype="text/plain">
-          <label >שם פרטי</label>
-          <input type="text" id="fname" name="first name" placeholder="השם שלך.." style="font-size: 18px;">
-      
-          <label >שם משפחה</label>
-          <input type="text" id="lname" name="last name" placeholder="שם המשפחה שלך.." style="font-size: 18px;">
-      
-          <label >אימייל</label>
-          <input type="text" name="email" placeholder="האימייל שלך.." style="font-size: 18px;">
-
-          <label> תוכן הודעה</label>
-          </br>
-          <textarea name="subject" placeholder="כתוב הודעה.." style="width: 100%; height: 300px; font-size: 18px;"></textarea>
-          <label> סמיילי</label>
-          <div class="select">
-            <select id="standard-select" name="emoji" aria-placeholder="בחר..">
-              <option >&#128512;</option>
-              <option >&#128513;</option>
-              <option >&#128514;</option>
-              <option >&#128546;</option>
-              <option >&#128526;</option>
-              <option >&#128525;</option>
-              <option >&#128527;</option>
-              <option >&#128540;</option>
-              <option >&#129314;</option>
-              <option >&#129322;</option>
-            </select>
-          </div>
-          <center><input type="submit" value="Submit"></center>
-        </form>
-      </div> -->
-      <form id="form">
-        <div class="container">
-          <label for="to_name">שם פרטי</label>
-          <input type="text" id="lname" name="last name" placeholder="שם פרטי.." style="font-size: 18px;">
-        </div>
-        <div class="container">
-          <label for="from_name">שם משפחה</label>
-          <input type="text" id="lname" name="last name" placeholder="שם המשפחה שלך.." style="font-size: 18px;">
-        </div>
-        <div class="container">
-          <label for="message">תוכן ההודעה</label>
-          <textarea name="subject" placeholder="כתוב הודעה.." style="width: 100%; height: 300px; font-size: 18px;"></textarea>
-        </div>
-        <div class="container">
-          <label for="reply_to">אימייל שלך</label>
-          <input type="text" name="email" placeholder="האימייל שלך.." style="font-size: 18px;">
-        </div>
-    
-        <div class="select">
-          <select id="standard-select" name="emoji" aria-placeholder="בחר..">
-            <option >&#128512;</option>
-            <option >&#128513;</option>
-            <option >&#128514;</option>
-            <option >&#128546;</option>
-            <option >&#128526;</option>
-            <option >&#128525;</option>
-            <option >&#128527;</option>
-            <option >&#128540;</option>
-            <option >&#129314;</option>
-            <option >&#129322;</option>
-          </select>
-        </div>
-        <br>
-        <input type="submit" id="button" value="Send Email">
-      </form>
-      
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-      
-      <script type="text/javascript">
-        emailjs.init('user_XtZoX8fE5vOgLdq51QgX8')
-      </script>
-  
+    <section id="contact" class="section">
+      <div>
+      <br/>
+      <span>שם פרטי:</span>
+      <br/>
+      <input type="text" placeholder="..Enter your first name" id="firstName" style="font-size: 18px;"/>
+      <br/>
+      <span>שם משפחה:</span>
+      <br/>
+      <input type="text" placeholder="..Enter your last name" id="lastName" style="font-size: 18px;" />
+      <br/>
+      <span>האימייל שלך:</span>
+      <br/>
+      <input type="email" placeholder="..Enter your email" id="email" style="font-size: 18px;"/>
+      <br/>
+      <br/>
+      <span>תוכן ההודעה:</span>
+      <br>
+        <textarea id="mytextarea" rows="5" style="width: 500px; height: 300px; font-size: 18px;"></textarea>
+      <br/>
+      <br/>
+      <button onclick="sendContact();">Submit</button>
+      <br/>
+      <br/>
+    </div>
     </section>
  
 
@@ -435,6 +388,26 @@
          $('#menu').toggle($(this).scrollTop()>1000)
       });​
     </script>
+    <script type="text/javascript">
+      function sendContact(){
+      var contact_name = firstName.value +" "+ lastName.value
+      var contact_email = email.value
+      var contact_content = tinymce.get("mytextarea").getContent();
+      window.open("mailto:ido3@post.bgu.ac.il?subject=Contacting With TBH&body=" +contact_content.slice(3, -4))
+      }
+
+    </script>
+    <script type="text/javascript">
+    tinymce.init({
+      selector: "#mytextarea",
+      plugins: "emoticons",
+      toolbar: "emoticons",
+      toolbar_location: "bottom",
+      menubar: false,
+      height : "200",
+    });
+    </script>
+
 
   </body>
 </html>
