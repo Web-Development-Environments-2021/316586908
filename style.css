@@ -1,9 +1,10 @@
 html,body{
-	width: 100%;
+	/* width: 100%; */
 	margin: 0%;
 	padding: 0%;
 	color: rgb(131, 64, 126);
 	background: border-box rgb(222, 198, 226);
+	width: auto!important; overflow-x: hidden!important
 }
 
 #menu 
